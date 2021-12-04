@@ -8,8 +8,6 @@ filepath = "./input.txt"
 movelist = []
 with open(filepath) as fp:
   for line in fp:
-    a = line.split()[0]
-    b = line.split()[1]
     movelist.append((line.split()[0],int(line.split()[1])))
 
 # part 1
