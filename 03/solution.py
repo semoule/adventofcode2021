@@ -39,3 +39,48 @@ for i in range(0, len(statlist)):
 
 # print result
 print(int(gammarate,2)*int(epsilonrate,2))
+
+## part 2
+def get_common(mylist, index):
+  zero_list = []
+  one_list = []
+  for item in mylist:
+    if item[index] == "0":
+      zero_list.append(item)
+    else:
+      one_list.append(item)
+  if len(zero_list) > len(one_list):
+    return zero_list
+  else:
+    return one_list
+
+candidate_list = bytelist
+index = 0
+while len(candidate_list) > 1:
+  candidate_list = get_common(candidate_list, index)
+  index += 1
+oxygen = int(candidate_list[0],2)
+
+
+def get_least(mylist, index):
+  zero_list = []
+  one_list = []
+  for item in mylist:
+    if item[index] == "0":
+      zero_list.append(item)
+    else:
+      one_list.append(item)
+  if len(zero_list) > len(one_list):
+    return one_list
+  else:
+    return zero_list
+
+candidate_list = bytelist
+index = 0
+while len(candidate_list) > 1:
+  candidate_list = get_least(candidate_list, index)
+  index += 1
+co2 = int(candidate_list[0],2)
+
+# print result
+print(oxygen * co2)
