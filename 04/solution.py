@@ -101,5 +101,11 @@ board_winner = min(board_result,key=itemgetter(1))
 # score
 print(board_winner[2])
 
+## part 2
+# get last board to win
+board_lastwin = max(board_result,key=itemgetter(1))
+# score
+print(board_lastwin[2])
+
 console.print('Duration : %.6f seconds' % (time.time() - start_time))
 
